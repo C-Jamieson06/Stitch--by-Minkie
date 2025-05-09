@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Your Booking | Stitch by Minkie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Stitch by Minkie</h1>
+      </header>
+    
+      <section class="booking-section">
+        <h2>Book Your Glam Session 💖</h2>
+        <p>Please choose a convenient date and time for your appointment.</p>
+    
+        <form id="bookingForm" class="booking-form">
+            <label for="date">Choose Date:</label>
+            <input type="date" id="date" name="date" required>
+          
+            <label for="time">Choose Time:</label>
+            <input type="time" id="time" name="time" required>
+          
+            <button type="submit">Confirm Booking</button>
+          </form>
+      </section>
+
+      <div id="thankYouPopup" class="thank-you-popup">
+        <div class="glitter"></div> <!-- 💫 glitter layer -->
+        <h2>Thank You 💕</h2>
+        <p>Your booking has been received.<br>We can't wait to slay your hair!</p>
+      </div>
+
+      <script>
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+          event.preventDefault();
+      
+          // Show fancy thank-you popup
+          const popup = document.getElementById("thankYouPopup");
+          popup.style.display = "block";
+      
+          // After 3 seconds, redirect to services.html
+          setTimeout(function() {
+            window.location.href = "services.html";
+          }, 3000);
+        });
+      </script>
+
+    
+</body>
+</html>
